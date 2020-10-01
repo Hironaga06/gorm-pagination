@@ -35,7 +35,7 @@ type (
 func New(db *gorm.DB, offset, limit int, order []string, models interface{}, debug bool) *pagination {
 	newDB := db
 	if debug {
-		newDB.Debug()
+		newDB = db.Debug()
 	}
 	return &pagination{
 		db:     newDB,
@@ -62,7 +62,7 @@ func (p *pagination) Paging() (*Result, error) {
 
 	if len(p.order) > 0 {
 		for _, o := range p.order {
-			p.db.Order(o)
+			p.db = p.db.Order(o)
 		}
 	}
 
