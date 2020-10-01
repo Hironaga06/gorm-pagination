@@ -47,7 +47,7 @@ func main() {
 
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
-		page, err := strconv.Atoi(c.DefaultQuery("offset", "1"))
+		offset, err := strconv.Atoi(c.DefaultQuery("offset", "1"))
 		if err != nil {
 			panic(err)
 		}
@@ -55,8 +55,9 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
+
 		var users []User
-		p := pagination.New(db, 1, 3, []string{"id asc"}, &users, true)
+		p := pagination.New(db, offset, limit, []string{"id asc"}, &users, true)
 		result, err := p.Paging()
 		if err != nil {
 			panic(err)
