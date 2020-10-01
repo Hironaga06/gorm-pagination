@@ -66,7 +66,7 @@ func (p *pagination) Paging() (*Result, error) {
 		}
 	}
 
-	if err := p.db.Limit(p.limit).Offset(p.offset).Find(&p.models).Error; err != nil {
+	if err := p.db.Limit(p.limit).Offset(p.offset).Find(p.models).Error; err != nil {
 		return nil, err
 	}
 
