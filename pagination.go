@@ -21,14 +21,14 @@ type (
 	}
 
 	Result struct {
-		TotalRecord int64
-		TotalPage   int
-		Records     interface{}
-		Offset      int
-		Limit       int
-		CurrentPage int
-		PrevPage    int
-		NextPage    int
+		TotalRecord int64       `json:"totalRecord"`
+		TotalPage   int         `json:"totalPage"`
+		Records     interface{} `json:"records"`
+		Offset      int         `json:"offset"`
+		Limit       int         `json:"limit"`
+		CurrentPage int         `json:"currentPage"`
+		PrevPage    int         `json:"prevPage"`
+		NextPage    int         `json:"nextPage"`
 	}
 )
 
