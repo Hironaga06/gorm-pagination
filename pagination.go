@@ -47,6 +47,7 @@ func New(db *gorm.DB, offset, limit int, order []string, models interface{}, deb
 }
 
 func (p *pagination) Paging() (*Result, error) {
+	db := p.db
 	if p.offset < DefaultOffset {
 		p.offset = DefaultOffset
 	}
@@ -54,24 +55,25 @@ func (p *pagination) Paging() (*Result, error) {
 		p.limit = DefaultLimit
 	}
 
+	var offset int
 	if p.offset == 1 {
-		p.offset = 0
+		offset = 0
 	} else {
-		p.offset = (p.offset - 1) * p.limit
+		offset = (p.offset - 1) * p.limit
 	}
 
 	if len(p.order) > 0 {
 		for _, o := range p.order {
-			p.db = p.db.Order(o)
+			db = db.Order(o)
 		}
-	}
-
-	if err := p.db.Limit(p.limit).Offset(p.offset).Find(p.models).Error; err != nil {
-		return nil, err
 	}
 
 	count, err := p.CountRecords()
 	if err != nil {
+		return nil, err
+	}
+
+	if err := db.Limit(p.limit).Offset(offset).Find(p.models).Error; err != nil {
 		return nil, err
 	}
 
