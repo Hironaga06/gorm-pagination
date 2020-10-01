@@ -1,6 +1,10 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Hironaga06/gorm-pagination v0.0.0-20201001052708-29f4e64901a6 h1:7CfP4n1gdBB9B/1eQdrBkJ8nHJPmY3y//3Q/QblEOlg=
 github.com/Hironaga06/gorm-pagination v0.0.0-20201001052708-29f4e64901a6/go.mod h1:Us7Ckqmp/58RQhP6Ui5yVWNVgQDuplJV1R51/jJRgbw=
+github.com/Hironaga06/gorm-pagination v0.0.2 h1:islWhqLt4UR8ZB5Tv5vqYlPPPYR50Ol+smO8Xn6B4Y0=
+github.com/Hironaga06/gorm-pagination v0.0.2/go.mod h1:Us7Ckqmp/58RQhP6Ui5yVWNVgQDuplJV1R51/jJRgbw=
+github.com/Hironaga06/gorm-pagination v0.0.3 h1:ZSLr5YrDog1yaJy42cv9DKAHWE9tXFqfhlGv1XmuUzM=
+github.com/Hironaga06/gorm-pagination v0.0.3/go.mod h1:Us7Ckqmp/58RQhP6Ui5yVWNVgQDuplJV1R51/jJRgbw=
 github.com/cockroachdb/apd v1.1.0 h1:3LFP3629v+1aKXU5Q37mxmRxX/pIu1nijXydLShEq5I=
 github.com/cockroachdb/apd v1.1.0/go.mod h1:8Sl8LxpKi29FqWXR16WEFZRNSz3SoPzUzeMeY4+DwBQ=
 github.com/coreos/go-systemd v0.0.0-20190321100706-95778dfbb74e/go.mod h1:F5haX7vjVVG0kc13fIWeqUViNPyEJxv/OmvnBo0Yme4=
